@@ -12,98 +12,69 @@
         <h1>My Bootstrap Page</h1>
         <p>Tables</p>
     </div>
-    <div class="container" mt-5>
+    <div class="container mt-5">
         <div class="row">
-            <div class="color-8"> 
+            <div class="col-2"></div>
+            <div class="col-8"> 
                 <h2>Basic Table</h2>
                 <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
                 <table class="table">
-                    <thead>
-                        <tr>
-                            <th style="width: 30%;">Firstname</th> <!-- 직접 퍼센테이지를 줄 수 있음 -->
-                            <th style="width: 40%;">Lastname</th> <!-- 주지 않으면 자동으로 맞춰짐 -->
-                            <th style="width: 40%;">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th style="width: 30%;">Firstname</th> <!-- 직접 퍼센테이지를 줄 수 있음 -->
+                        <th style="width: 30%;">Lastname</th> <!-- 주지 않으면 자동으로 맞춰짐 -->
+                        <th style="width: 40%;">Email</th>
+                    </tr>
+                    <tr>
+                        <td>John</td><td>Doe</td><td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td><td>Moe</td><td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td><td>Dooley</td><td>july@example.com</td>
+                    </tr>
                 </table>
 
                 <h2 class="mt-4">Borderless Table</h2> <!-- 많이 사용되지 않음 -->
                 <p>The .table-borderless class adds borders on all sides of the table and the cells:</p>
                 <p>이 테이블은 form 입력과 함께 많이 사용됨</p>            
                 <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th style="width: 30%;">Firstname</th>
-                            <th style="width: 40%;">Lastname</th>
-                            <th style="width: 40%;">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th style="width: 30%;">Firstname</th>
+                        <th style="width: 30%;">Lastname</th>
+                        <th style="width: 40%;">Email</th>
+                    </tr>
+                    <tr>
+                        <td>John</td><td>Doe</td><td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td><td>Moe</td><td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td><td>Dooley</td><td>july@example.com</td>
+                    </tr>
                 </table>
 
-                <h2>Small Table</h2>
+                <h2 class="mt-4">Small Table</h2>
                 <p>The .table-sm class makes the table smaller by cutting cell padding in half:</p>            
                 <table class="table">
-                    <thead>
-                        <tr>
-                            <th style="width: 30%;">Firstname</th>
-                            <th style="width: 40%;">Lastname</th>
-                            <th style="width: 40%;">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                        </tr>
-                    </tbody>
+                    <tr>
+                        <th style="width: 30%;">Firstname</th>
+                        <th style="width: 30%;">Lastname</th>
+                        <th style="width: 40%;">Email</th>
+                    </tr>
+                    <tr>
+                        <td>John</td><td>Doe</td><td>john@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Mary</td><td>Moe</td><td>mary@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>July</td><td>Dooley</td><td>july@example.com</td>
+                    </tr>
                 </table>
             </div>
-            <div class="color-2"></div>
+            <div class="col-2"></div>
         </div>
     </div>
 </body>
