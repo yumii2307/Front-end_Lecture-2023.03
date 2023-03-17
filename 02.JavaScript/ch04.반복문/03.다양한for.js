@@ -20,8 +20,8 @@ for (let i = 1; i <= 10; i += 2) {
 // }
 
 // 48에서 10까지 3의 배수의 합.answer
-let Sum3 = 0;
+let sum3 = 0;
 for (let i = 48; i >= 10; i -= 3) {
-    Sum3 += i;
-    console.log(`48 ~ 10까지 3의 배수의 곱 = ${Sum3}`);
+    sum3 += i;
+    console.log(`48 ~ 10까지 3의 배수의 곱 = ${sum3}`);
 }

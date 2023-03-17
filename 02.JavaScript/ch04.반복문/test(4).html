@@ -7,9 +7,9 @@
     <title>주사위 세개</title>
     <script>
         function prizeMoney() {
-            let num1 = parseInt(Math.ceil(Math.random() * 6));
-            let num2 = parseInt(Math.ceil(Math.random() * 6));
-            let num3 = parseInt(Math.ceil(Math.random() * 6));
+            let num1 = parseInt(Math.ceil(Math.random() * 6)); // Math.random은 0.00...1 ~ 0.999... (* 6 해주면 0.00...6 ~ 5.999...)
+            let num2 = parseInt(Math.ceil(Math.random() * 6)); // Math.ceil은 올림 (1.0 ~ 6.0)
+            let num3 = parseInt(Math.ceil(Math.random() * 6)); // parseInt으로 소수점 빼기
             console.log(num1, num2, num3);
             let prizeMoney = 0;
             let resTag = document.getElementById('result');
