@@ -11,7 +11,7 @@
             let resTag = document.getElementById('result');
             
             let fb = num;
-            if (num % 15 == 0)      // 제일 작은 범위를 먼저 쓴다.
+            if (num % 15 == 0)      // 제일 작은 범위를 먼저 쓴다. 기본적으로 실행됨.
                 fb = 'FizzBuzz';
             else if (num % 3 == 0)
                 fb = 'Fizz';
@@ -19,7 +19,7 @@
                 fb = 'Buzz';
             else
                 fb = num
-            resTag.innerHTML = '<h4>' + fb + '</h4>'
+            resTag.innerHTML = '<h4>' + fb + '</h4>';
         }
     </script>
 </head>
