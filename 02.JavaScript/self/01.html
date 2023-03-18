@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험 성적</title>
+    <script>
+        function grade() {
+            let score = Number(document.getElementById('score').value);
+            let grade = [];
+            let resTag = document.getElementById('result');
+            if (score > 89)
+                resTag.innerHTML = `<h4> 성적 : A </h4>`;
+            else if (score > 79)
+                resTag.innerHTML = `<h4> 성적 : B </h4>`;
+            else if (score > 69)
+                resTag.innerHTML = `<h4> 성적 : C </h4>`;
+            else if (score > 59)
+                resTag.innerHTML = `<h4> 성적 : D </h4>`;
+            else
+                resTag.innerHTML = `<h4> 성적 : F </h4>`;           
+        }
+    </script>
+</head>
+<body style="margin: 50px;">
+    <input type="text" id="score" placeholder="점수를 입력하세요">
+    <button onclick="grade()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
