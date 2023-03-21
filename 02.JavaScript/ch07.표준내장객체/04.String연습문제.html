@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습 문제</title>
+    <script>
+        function clock() {
+            let num = document.getElementById('num').value;
+            let totalSeconds = 0;
+            for (let hour = 0; hour < 24; hour++) {
+                for (let minute = 0; minute < 60; minute++) {
+                    let display = hour + ':' + minute;
+                    if (display.indexOf('3') >= 0)
+                        totalSeconds += 60;
+                }
+            }
+            document.getElementById('result').innerHTML = `${totalSeconds} 초`;
+        }
+        function isPalindrome() {
+            let pal = document.getElementById('pal').value;
+            let reversePal = pal.split('').reverse().join('');
+            let palResult = (pal == reversePal) ? 'palindrome입니다.' : 'palindrome이 아닙니다.';
+            document.getElementById('result2').innerHTML = palResult;
+        }
+        function findName() {
+            let path = document.getElementById('path').value;
+            let index = path.lastIndexOf('\\');
+            let filename = path.substring(index + 1);
+            document.getElementById('result3').innerHTML = filename;
+        }
+        function strCount(str, dst) {
+            return str.split(dst).length - 1;
+        }
+        function countNum() {
+            let range = parseInt(document.getElementById('range').value);
+            let numStr = '';
+            for (let i = 1; i <= 1000; i++)
+                numStr += i;                    //12345678910111213....9991000
+            let result = '';
+            for (let num = 0; num <= 9; num++) {
+                let count = strCount(numStr, String(num));
+                result += `${num}: ${count}<br>`;
+            }
+            document.getElementById('result4').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <div class="container-fluid p-3 bg-primary text-white text-center">
+        <h1>연습 문제</h1>
+        <p>String</p>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h4>Q1. 디지털 시계</h4>
+                <hr>
+                <input type="text" id="num" class="form-control" placeholder="찾고싶은 숫자">
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" onclick="clock()">확인</button>
+                </div>
+                <hr>
+                <h4 id="result1"></h4>
+            </div>
+            <div class="col">
+                <h4>Q2. Palindrome</h4>
+                <hr>
+                <input type="text" id="num" class="form-control" placeholder="확인할 문자">
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" onclick="isPalindrome()">확인</button>
+                </div>
+                <hr>
+                <h4 id="result2"></h4>
+            </div>
+            <div class="col">
+                <h4>Q3. Filename</h4>
+                <hr>
+                <input type="text" id="path" class="form-control" placeholder="경로(Path) 입력">
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" onclick="findName()">확인</button>
+                </div>
+                <hr>
+                <h4 id="result3"></h4>
+            </div>
+            <div class="col">
+                <h4>Q4. 몇 번 나오나</h4>
+                <hr>
+                <input type="text" id="range" class="form-control" placeholder="찾고 싶은 범위">
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" onclick="countNum()">확인</button>
+                </div>
+                <hr>
+                <h4 id="result4"></h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
