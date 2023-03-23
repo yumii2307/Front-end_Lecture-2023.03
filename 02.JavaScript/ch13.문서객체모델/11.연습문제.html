@@ -29,15 +29,17 @@
         }
 
         function newCount() {
-            let str = document.getElementById('str').value;
-            let text = str.replace(/[',.-]/g, '').toLowerCase();
-            let words = text.split(' ');
+            let str = document.getElementById('sentence').value;
+            let search = document.getElementById('search').value.trim();    // 찾을 단어 주위의 공백을 없애 줌
+            let noPunct = str.replace(/[',.-]/g, '').toLowerCase();
+            let words = noPunct.split(' ');
             let count = 0;
             for (let word of words) {
-                if (word == 'the')
+                if (word == search)
                     count++;
             }
-            document.getElementById('result2').innerHTML = `${count}개`;
+            document.getElementById('result2').innerHTML = `${search}의 갯수는 ${count} 입니다.`;
+
         }
         function list() {
             let str2 = document.getElementById('str2').value;
@@ -103,7 +105,7 @@
                     <button class="btn btn-primary mt-3" onclick="powerArray()">확인</button>
                 </div>
                 <hr>
-                <h4 id="result1"></h4>
+                <h4 id="result1"></h4><br>
             </div>            
             <div class="col">
                 <h4>Q2. 'the' 갯수 찾기</h4>
@@ -115,11 +117,12 @@
                 </p>
                 <hr>
                 <textarea id="sentence" class="form-control" rows="5"></textarea>
+                <input type="text" id="search" class="form-control mt-2" placeholder="찾을 단어">
                 <div class="text-center">
                     <button class="btn btn-primary mt-3" onclick="newCount()">확인</button>
                 </div>
                 <hr>
-                <h4 id="result2"></h4>
+                <h4 id="result2"></h4><br>
             </div>            
             <div class="col">
                 <h4>Q3. 내림차순 출력</h4>
@@ -137,6 +140,7 @@
                 <h4 id="result3"></h4><br>
             </div>
             <div class="text-center">
+                <hr>
                 <h4>Q4. 디지털 시계</h4>
                 <hr>
                 <img id="h1" width="100">

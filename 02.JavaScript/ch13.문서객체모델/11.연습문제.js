@@ -21,14 +21,16 @@ function ans1 () {
 }
 function ans2() {
     let text = document.getElementById('sentence').value;
+    let search = document.getElementById('search').value.trim();    // 찾을 단어 주위의 공백을 없애 줌
     let noPunct = text.replace(/[',.]/g, '').replace(/[-\n]/g, ' ').toLowerCase();
+    console.log(noPunct);
     let words = noPunct.split(' ');
     let count = 0;
     for (let word of words) {
-        if (word == 'the')
-        count++;
+        if (word == search)
+            count++;
     }
-    document.getElementById('result2').innerHTML = `the의 갯수는 ${count} 입니다.`;
+    document.getElementById('result2').innerHTML = `${search}의 갯수는 ${count} 입니다.`;
 }
 function ans3() {
     let priceStr = document.getElementById('price').value;
