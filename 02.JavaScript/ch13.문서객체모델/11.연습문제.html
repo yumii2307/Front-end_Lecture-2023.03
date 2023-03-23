@@ -18,7 +18,14 @@
             for (let i = num1; i <= num2; i++) {
                 arr.push(2 ** i);
             }
-            document.getElementById('result1').innerHTML = arr;
+            let resultStr = '';
+            for (let i = 0; i < arr.length; i++) {
+                if ((i + 1) % 4 == 0)
+                    resultStr += arr[i] + '<br>';
+                else
+                    resultStr += arr[i] + ', ';
+            }
+            document.getElementById('result1').innerHTML = resultStr;
         }
 
         function newCount() {
@@ -90,7 +97,7 @@
                     첫번째 정수부터 두번째 정수까지를 지수로 하는 2의 거듭제곱 배열을 출력<br>
                 </p>
                 <hr>
-                <input type="text" id="num1" class="form-control" placeholder="첫번째 정수">
+                <input type="text" id="num1" class="form-control" placeholder="첫번째 정수"><br>
                 <input type="text" id="num2" class="form-control" placeholder="두번째 정수">
                 <div class="text-center">
                     <button class="btn btn-primary mt-3" onclick="powerArray()">확인</button>
@@ -99,15 +106,15 @@
                 <h4 id="result1"></h4>
             </div>            
             <div class="col">
-                <h4>Q2. 문자열 출력</h4>
+                <h4>Q2. 'the' 갯수 찾기</h4>
                 <hr>
                 <p>
-                    문자열에서 'the'의 개수를 출력.<br>
+                    문자열에서 'the'의 갯수를 출력.<br>
                     'them', 'there', 'their' 등은 포함하지 않아야 함.<br><br>
                     the grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. That is why, at the, age of six, I gave up what might have been a magnificent career as a painter. I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to the.
                 </p>
                 <hr>
-                <input type="text" id="str" class="form-control" placeholder="문자열 입력">
+                <textarea id="sentence" class="form-control" rows="5"></textarea>
                 <div class="text-center">
                     <button class="btn btn-primary mt-3" onclick="newCount()">확인</button>
                 </div>
@@ -118,7 +125,7 @@
                 <h4>Q3. 내림차순 출력</h4>
                 <hr>
                 <p>
-                    입력 받은 가격을 내림차순으로 출력<br>
+                    입력 받은 가격을 내림차순으로 출력<br><br>
                     51900;83000;158000;367500;250000;59200;128500;1304000<br>
                 </p>
                 <hr>
@@ -130,17 +137,19 @@
                 <h4 id="result3"></h4><br>
             </div>
             <div class="text-center">
-            <h2 id="date"></h2>
-            <hr>
-            <img id="h1" width="100">
-            <img id="h2" width="100">
-            <img src="Colon.jpg" width="100">
-            <img id="m1" width="100">
-            <img id="m2" width="100">
-            <img src="Colon.jpg" width="100">
-            <img id="s1" width="100">
-            <img id="s2" width="100">
-        </div>            
+                <h4>Q4. 디지털 시계</h4>
+                <hr>
+                <img id="h1" width="100">
+                <img id="h2" width="100">
+                <img src="Colon.jpg" width="100">
+                <img id="m1" width="100">
+                <img id="m2" width="100">
+                <img src="Colon.jpg" width="100">
+                <img id="s1" width="100">
+                <img id="s2" width="100">
+                <hr>
+                <h2 id="date"></h2>
+            </div>            
         </div>
     </div>
 </body>
