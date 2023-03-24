@@ -40,7 +40,7 @@
                 if (word == search)
                     count++;
             }
-            $('#result2').html(`${search}의 갯수는 ${count} 입니다.`);
+            $('#result2').text(`${search}의 갯수는 ${count} 입니다.`);
 
         };
         function list() {
@@ -75,14 +75,19 @@
                 dateStr += '(' + week[now.getDay()] + ')';              // 23-03-22(수)
                 const timeStr = myDatetime(now).substring(11, 19);      // 10:46:00
                 $('#date').html(dateStr);
-                $('#h1').attr('src', '../ch13.문서객체모델/digits/' + timeStr[0] + '.svg');
-                $('#h2').attr('src', '../ch13.문서객체모델/digits/' + timeStr[1] + '.svg');
-                $('#c1').attr('src', '../ch13.문서객체모델/digits/Colon.jpg');
-                $('#m1').attr('src', '../ch13.문서객체모델/digits/' + timeStr[3] + '.svg');
-                $('#m2').attr('src', '../ch13.문서객체모델/digits/' + timeStr[4] + '.svg');
-                $('#c2').attr('src', '../ch13.문서객체모델/digits/Colon.jpg');
-                $('#s1').attr('src', '../ch13.문서객체모델/digits/' + timeStr[6] + '.svg');
-                $('#s2').attr('src', '../ch13.문서객체모델/digits/' + timeStr[7] + '.svg');
+
+                const mapping = [0, 1, 3, 4, 6, 7]
+                $('.number').each(function(index, _) {
+                    $(this).attr('src', `../ch13.문서객체모델/digits/${timeStr[mapping[index]]}.svg`);
+                })
+                // 반복되는 부분은 줄여야 함
+
+                /* $('#h1').attr('src', `../ch13.문서객체모델/digits/${timeStr[0]}.svg`);
+                $('#h2').attr('src', `../ch13.문서객체모델/digits/${timeStr[1]}.svg`);
+                $('#m1').attr('src', `../ch13.문서객체모델/digits/${timeStr[3]}.svg`);
+                $('#m2').attr('src', `../ch13.문서객체모델/digits/${timeStr[4]}.svg`);
+                $('#s1').attr('src', `../ch13.문서객체모델/digits/${timeStr[6]}.svg`);
+                $('#s2').attr('src', `../ch13.문서객체모델/digits/${timeStr[7]}.svg`); */
             }, 1000);
         };
     </script>
@@ -149,14 +154,14 @@
                 <hr>
                 <h2 id="date"></h2>
                 <hr>
-                <img id="h1" width="100">
-                <img id="h2" width="100">
-                <img id="c1" width="100">
-                <img id="m1" width="100">
-                <img id="m2" width="100">
-                <img id="c2" width="100">
-                <img id="s1" width="100">
-                <img id="s2" width="100">
+                <img id="h1" class="number" width="100">
+                <img id="h2" class="number" width="100">
+                <img id="c1" width="100" src="../ch13.문서객체모델/digits/Colon.jpg">
+                <img id="m1" class="number" width="100">
+                <img id="m2" class="number" width="100">
+                <img id="c2" width="100"  src="../ch13.문서객체모델/digits/Colon.jpg">
+                <img id="s1" class="number" width="100">
+                <img id="s2" class="number" width="100">
             </div>            
         </div>
     </div>
