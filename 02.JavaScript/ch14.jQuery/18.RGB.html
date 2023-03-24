@@ -43,7 +43,8 @@
                     </tr>
                     <tr>
                         <td><span class="text-danger"><strong>Red</strong></span></td>
-                        <td><input type="range" class="form-range" id="red" step="1" name="points" min="0" max="255"></td>
+                        <td><input type="range" class="form-range" id="red" step="1" min="0" max="255" oninput="valueChange()"></td>
+                        <span id="red"></span>
                         <td rowspan="3">
                             <div id="box" class="p-5 mb-2" style="background-color: rgb(128,128,128);"></div>
                             <h6 id="result">rgb(128, 128, 128)</h6>
@@ -51,11 +52,13 @@
                     </tr>
                     <tr>
                         <td><span class="text-success"><strong>Green</strong></span></td>
-                        <td><input type="range" class="form-range" id="green" step="1" name="points" min="0" max="255"></td>
+                        <td><input type="range" class="form-range" id="green" step="1" min="0" max="255" oninput="valueChange()"></td>
+                        <span id="green"></span>
                     </tr>
                     <tr>
                         <td><span class="text-primary"><strong>Blue</strong></span></td>
-                        <td><input type="range" class="form-range" id="blue" step="1" name="points" min="0" max="255"></td>
+                        <td><input type="range" class="form-range" id="blue" step="1" min="0" max="255" oninput="valueChange()"></td>
+                        <span id="blue"></span>
                     </tr>             
                 </table>
             <div class="col-2"></div>
