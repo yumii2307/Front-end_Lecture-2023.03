@@ -1,0 +1,74 @@
+body {
+    background-color: #FCE4EC;
+  }
+  
+  #toggleButton {
+    background-color: #f08080;
+    border: none;
+    color: #fff;
+    border-radius: 15px;
+    padding: 7px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #toggleButton:hover {
+    background-color: #f0808080;
+    color: #fff;
+  }
+  
+  #hiddenText {
+    display: none;
+  }
+  
+  #personalInformation {
+    border: 3px solid #f08080;
+    border-radius: 15px;
+    margin-top: 10px;
+    border-collapse: separate;
+    padding: 15px;
+    font-weight: bold;
+    background-color: #fff;
+  }
+
+  .fa-instagram {
+    background: #f08080;
+    color: white;
+  }
+  
+    .dessert39 {
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+    }
+    .dessert39:hover {
+      opacity: 0.7;
+    }
+  
+  .carousel-item img {
+      width: 550px;
+      height: 350px;
+}
+
+.carousel {
+    width: 550px;
+    height: 350px;
+  }
+
+.dessert {
+    width: 550px;
+    height: 350px;
+}
+
+.travel {
+    width: 550px;
+    height: 350px;
+}
+
+.card {
+    width: 400px;
+    height: 690px;
+  }
+
+.address {
+    width: 30px;
+  }
