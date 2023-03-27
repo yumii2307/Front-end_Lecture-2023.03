@@ -36,8 +36,8 @@ body {
   }
   
     .dessert39 {
-      width: 37px;
-      height: 37px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
     }
     .dessert39:hover {
@@ -54,12 +54,7 @@ body {
     height: 350px;
   }
 
-.dessert {
-    width: 550px;
-    height: 350px;
-}
-
-.travel {
+.basic {
     width: 550px;
     height: 350px;
 }
@@ -72,3 +67,12 @@ body {
 .address {
     width: 30px;
   }
+
+hr {
+  color: #f08080;
+}
+
+.nav-link {
+  color: #f08080;
+  
+}
