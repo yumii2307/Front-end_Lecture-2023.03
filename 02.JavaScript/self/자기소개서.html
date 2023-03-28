@@ -11,12 +11,11 @@
 </head>
 <body>
     <div class="container-fluid p-3 text-center">
-        <h1>
+        <h5 class="mt-3">
             <i class="fa-solid fa-heart" style="color: #f08080;"></i>
-            Yumi's First Page
+            Hello everyone! This is a space to introduce Yumi.
             <i class="fa-solid fa-heart" style="color: #f08080;"></i>
-        </h1>
-        <p>Hello everyone! This is a space to introduce Yumi.</p>
+        </h5>
     </div>
     <hr>
     <div class="container mt-3">
@@ -38,7 +37,7 @@
                         <table id="personalInformation">
                         <tr>
                             <td>
-                                <p>Birthday : 2000.01.20</p>
+                                <p><i id ="d-day" class="fa-solid fa-heart" style="color: #f08080;"></i></p>
                                 <p>MBTI : ISFJ</p>
                                 <p>Personal Color : winter cool</p>
                                 <p>Goal : junior developer</p>
@@ -540,6 +539,15 @@
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
           return new bootstrap.Tooltip(tooltipTriggerEl)
         })
+    </script>
+    <script>
+        var startDate = new Date("2020-09-13");
+
+        setInterval(function() {
+        var currentDate = new Date();
+        var daysLeft = Math.floor((currentDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+        document.getElementById("d-day").textContent = " +" + daysLeft;
+        }, 1000);
     </script>
 </body>
 </html>
