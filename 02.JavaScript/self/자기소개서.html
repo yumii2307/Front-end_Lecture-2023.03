@@ -32,17 +32,17 @@
                     <i class="fa-brands fa-instagram me-2" style="color: #f08080;"></i>yum____ii<br>
                     <i class="fa-brands fa-github me-2" style="color: #f08080;"></i><a href="https://github.com/yumii2307" target="_blank">Yumi Kim</a><br>
                     <i class="fa-solid fa-location-dot me-2" style="color: #f08080;"></i>Hwaseong-si, Gyeonggi-do<br><br>
-                    <button id="toggleButton">Personal information</button>  
-                    <div id="hiddenText">
+                    <button class="toggleButton" id="toggleButton1">Personal information</button>  
+                    <div class="hiddenText" id="hiddenText1">
                         <table id="personalInformation">
-                        <tr>
-                            <td>
-                                <p><i id ="d-day" class="fa-solid fa-heart" style="color: #f08080;"></i></p>
-                                <p>MBTI : ISFJ</p>
-                                <p>Personal Color : winter cool</p>
-                                <p>Goal : junior developer</p> 
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <p><i id ="d-day" class="fa-solid fa-heart" style="color: #f08080;"></i></p>
+                                    <p>MBTI : ISFJ</p>
+                                    <p>Personal Color : winter cool</p>
+                                    <p>Goal : junior developer</p> 
+                                </td>
+                            </tr>
                         </table>
                     </div>               
                 </div>
@@ -52,7 +52,7 @@
                 <li class="nav-item1">
                     <a class="nav-link active" data-bs-toggle="tab" href="#hobby">HOBBY</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item2 dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">TRAVEL</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" data-bs-toggle="tab" href="#travel">
@@ -188,8 +188,8 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <strong> Gyeongju-si, Gyeongsangbuk-do, Republic of Korea</strong>
                     <hr>
-                    <button id="toggleButton2"> 경주 관광지 열어보기 <i class="fa-solid fa-chevron-right"></i></button>
-                    <div id="hiddenText2">
+                    <button class="toggleButton" id="toggleButton2"> 경주 관광지 열어보기 <i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="hiddenText" id="hiddenText2">
                         <table>
                             <tr>
                                 <td>
@@ -332,8 +332,8 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <strong> Paju-si, Gyeonggi-do, Republic of Korea</strong>
                     <hr>
-                    <button id="toggleButton3"> 파주 관광지 열어보기 <i class="fa-solid fa-chevron-right"></i></button>
-                    <div id="hiddenText3">
+                    <button class="toggleButton" id="toggleButton3"> 파주 관광지 열어보기 <i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="hiddenText" id="hiddenText3">
                         <table>
                             <tr>
                                 <td>
@@ -502,36 +502,13 @@
         </div>
     </div>
     <script>
-        document.getElementById("toggleButton").addEventListener("click", function(){
-            var hiddenText = document.getElementById("hiddenText");
-            if(hiddenText.style.display === "none"){
-                hiddenText.style.display = "block";
-            }
-            else{
-                hiddenText.style.display = "none";
-            }
-        });
-    </script>
-    <script>
-        document.getElementById("toggleButton2").addEventListener("click", function(){
-            var hiddenText2 = document.getElementById("hiddenText2");
-            if(hiddenText2.style.display === "none"){
-                hiddenText2.style.display = "block";
-            }
-            else{
-                hiddenText2.style.display = "none";
-            }
-        });
-    </script>
-    <script>
-        document.getElementById("toggleButton3").addEventListener("click", function(){
-            var hiddenText3 = document.getElementById("hiddenText3");
-            if(hiddenText3.style.display === "none"){
-                hiddenText3.style.display = "block";
-            }
-            else{
-                hiddenText3.style.display = "none";
-            }
+        var toggleButtons = document.querySelectorAll("[id^='toggleButton']");
+      
+        toggleButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                var hiddenText = document.getElementById("hiddenText" + button.id.slice(-1));
+                hiddenText.style.display = hiddenText.style.display === "none" ? "block" : "none";
+            });
         });
     </script>
     <script>
