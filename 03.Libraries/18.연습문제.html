@@ -12,7 +12,6 @@
     <script>
         window.onload = function() {
             const ctx = document.getElementById('myChart')
-            let Aq1 = [], Aq2 = [], Aq3 = [], Aq4 =[];
             let x1 = [10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0];
             let y1 = [8.04, 6.95, 7.58, 8.81, 8.33, 9.96, 7.24, 4.26, 10.84, 4.82, 5.68];
             let x2 = [10.0, 8.0, 13.0, 9.0, 11.0, 14.0, 6.0, 4.0, 12.0, 7.0, 5.0];
@@ -21,53 +20,44 @@
             let y3 = [7.46, 6.77, 12.74, 7.11, 7.81, 8.84, 6.08, 5.39, 8.15, 6.42, 5.73];
             let x4 = [8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0, 19.0, 8.0, 8.0, 8.0];
             let y4 = [6.58, 5.76, 7.71, 8.84, 8.47, 7.04, 5.25, 12.50, 5.56, 7.91, 6.89];
+            let Aq1 = [], Aq2 = [], Aq3 = [], Aq4 =[];
             for (let i = 0; i < 11; i++) {
                 Aq1.push({x: x1[i], y: y1[i]});
                 Aq2.push({x: x2[i], y: y2[i]});
                 Aq3.push({x: x3[i], y: y3[i]});
                 Aq4.push({x: x4[i], y: y4[i]});
             }
-            new Chart(ctx, {
-                type: 'scatter',
-                data: {
-                    datasets: [{
-                        label: 'Aq1',
-                        pointRadius: 4,
-                        pointBackgroundColor: 'rgb(255, 0, 0)',
-                        data: Aq1
-                    }, {
-                        label: 'Aq2',
-                        pointRadius: 4,
-                        pointBackgroundColor: 'rgb(0, 255, 0)',
-                        data: Aq2
-                    }, {
-                        label: 'Aq3',
-                        pointRadius: 4,
-                        pointBackgroundColor: 'rgb(0, 0, 255)',
-                        data: Aq3
-                    }, {
-                        label: 'Aq4',
-                        pointRadius: 4,
-                        pointBackgroundColor: 'rgb(255, 255, 0)',
-                        data: Aq4
-                    }]
-                },
-               options: {
-                    scales: {
-                        xAxes: [{ticks: {min: 40, max:40}}],
-                        yAxes: [{ticks: {min: 6, max: 16}}]
+
+            let dataset = [Aq1, Aq2, Aq3, Aq4];
+            let titles = ['I', 'II', 'III', 'IV'];
+            let line = [{x:2, y:4}, {x:20, y:13}];
+            for (let i = 0; i < 4; i++) {
+                new Chart('myChart'+(i+1), {
+                    data: {
+                        datasets: [{
+                            type: 'scatter', pointRadius: 4,
+                            pointBackgroundColor: 'rgb(255, 0, 0)',
+                            data: dataset[i]
+                        }, {
+                           type: 'line', fill: false, label: 'Regression Line',
+                           borderColor: 'blue', pointRadius: 1, data:line
+                        }]
                     },
-                    plugins: {
-                        legend: {display: true},
-                        title: {
-                            display: true,
-                            text: "Anscombe's quartet",
-                            padding: {top: 10, bottom: 20},
-                            font: {size: 20}
+                    options: {
+                        scales: {
+                            x: {min: 2, max:20},
+                            y: {min: 3, max: 13}
+                        },
+                        plugins: {
+                            legend: {display: false},
+                            title: {
+                                display: true,
+                                text: "Dataset" + titles[i],
+                            }
                         }
                     }
-               }
-            });
+                });
+            }
         }
     </script>
 </head>
@@ -79,8 +69,13 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8">
-                <canvas id="myChart" width="100%"></canvas>
+            <div class="col-4">
+                <canvas id="myChart1" width="100%" height="70"></canvas>
+                <canvas id="myChart2" width="100%" height="70"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart3" width="100%" height="70"></canvas>
+                <canvas id="myChart4" width="100%" height="70"></canvas>
             </div>
             <div class="col-2"></div>
         </div>                 
