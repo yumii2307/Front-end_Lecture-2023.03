@@ -2,21 +2,22 @@ body {
     background-color: #FCE4EC;
   }
   
-  #toggleButton {
+  .toggleButton {
     background-color: #f08080;
     border: none;
     color: #fff;
     border-radius: 15px;
     padding: 7px 20px;
     transition: background-color 0.3s ease;
+    font-size: large;
   }
   
-  #toggleButton:hover {
+  .toggleButton:hover {
     background-color: #f0808080;
     color: #fff;
   }
   
-  #hiddenText {
+  .hiddenText {
     display: none;
   }
   
@@ -28,13 +29,7 @@ body {
     padding: 15px;
     font-weight: bold;
     background-color: #fff;
-  }
-
-  .fa-instagram {
-    background: #f08080;
-    color: white;
-  }
-  
+  } 
     .dessert39 {
       width: 30px;
       height: 30px;
@@ -74,5 +69,8 @@ hr {
 
 .nav-link {
   color: #f08080;
-  
+}
+
+.nav-link:hover {
+  color: #f0808080; 
 }
