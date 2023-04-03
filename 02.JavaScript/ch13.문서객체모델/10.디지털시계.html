@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>단순 디지털 시계</title>
+    <style>
+        h1 {
+          display: inline;
+        }
+    </style>
     <script>
         function twoDigit(num) {
             return (num < 10) ? '0' + num : String(num);
@@ -27,8 +32,7 @@
     </script>
 </head>
 <body style="margin: 40px;">
-    <h2 id="date"></h2>
-    <hr>
+    <h1 id="date"></h1>
     <h1 id="time"></h1>
 </body>
 </html>
